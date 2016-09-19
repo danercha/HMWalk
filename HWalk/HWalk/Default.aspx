@@ -44,6 +44,12 @@
 
         });
     </script>
+    <style type="text/css">
+        .scroll_miles {
+            height: 200px !important;
+            overflow-y: scroll;
+        }
+    </style>
     <div class="jumbotron">
         <h1>Hitchiner Walks</h1>
 
@@ -90,30 +96,32 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Date</th>
-                                    <th>Milage</th>
-                                </tr>
-                            </thead>
-                            <tbody class="searchable">
-                                <asp:Repeater runat="server" ID="rptMileDetails">
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td>W<%# Eval("Walker_Id") %></td>
-                                            <td><%# Eval("Mileage_Date", "{0:d}") %></td>
-                                            <td><%# Eval("Mileage") %></td>
-                                        </tr>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </tbody>
-                        </table>
+                        <div class="scroll_miles">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Date</th>
+                                        <th>Milage</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="searchable">
+                                    <asp:Repeater runat="server" ID="rptMileDetails">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td>W<%# Eval("Walker_Id") %></td>
+                                                <td><%# Eval("Mileage_Date", "{0:d}") %></td>
+                                                <td><%# Eval("Mileage") %></td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="row">
                         <br />
-                        <br />
+                        <h4 style="margin-left: 15px;">Add New</h4>
                         <table class="table">
                             <tr>
                                 <td>

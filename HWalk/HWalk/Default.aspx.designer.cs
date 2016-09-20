@@ -22,6 +22,15 @@ namespace HWalk {
         protected global::System.Web.UI.WebControls.Repeater rptWalker;
         
         /// <summary>
+        /// lblTeamMiles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTeamMiles;
+        
+        /// <summary>
         /// hdnCurrentId control.
         /// </summary>
         /// <remarks>

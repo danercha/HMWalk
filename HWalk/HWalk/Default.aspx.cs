@@ -39,9 +39,12 @@ namespace HWalk
 
                     var mile_entries = (from x in wtx.MILEAGEs
                                         select x).ToList();
+
+                    double _total = 0;
                     foreach (var w in mile_entries)
                     {
                         _localMiles.Add(new LocalMilage { Mileage_Id = w.MILEAGE_ID, Mileage = w.MILEAGE1, Mileage_Date = w.MILEAGE_DT, Walker_Id = w.WALKER_ID });
+                        _total += w.MILEAGE1;
                     }
 
                     rptWalker.DataSource = _localWalkers;
@@ -49,6 +52,8 @@ namespace HWalk
 
                     rptMileDetails.DataSource = _localMiles;
                     rptMileDetails.DataBind();
+
+                    lblTeamMiles.Text = _total.ToString();
                 }
             }
         }

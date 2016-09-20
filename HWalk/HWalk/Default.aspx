@@ -83,6 +83,11 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><br /><h4>Total Team Miles: <asp:Label runat="server" ID="lblTeamMiles" CssClass="label label-primary"></asp:Label></h4></td>
+                </tr>
+            </tfoot>
         </table>
         <asp:HiddenField runat="server" ID="hdnCurrentId" />
     </div>

@@ -75,7 +75,7 @@
                             </td>
                             <td>
 
-                                <asp:Label runat="server" ID="Label1" CssClass="label label-default"><%# Eval("Milage") %></asp:Label></td>
+                                <asp:Label runat="server" ID="Label1" CssClass="label label-default"><%# Eval("Mileage") %></asp:Label></td>
                             <td>
                                 <button type="button" class="btn btn-info btn-sm modalfocus" id="modalbutton" data-toggle="modal" data-target="#myModal"><span class=""></span>View</button>
                             </td>
@@ -107,7 +107,7 @@
                                     <tr>
                                         <th></th>
                                         <th>Date</th>
-                                        <th>Milage</th>
+                                        <th>Mileage</th>
                                     </tr>
                                 </thead>
                                 <tbody class="searchable">
@@ -142,7 +142,7 @@
 
                                 </td>
                                 <td>
-                                    <label for="tbNewMilage">Milage</label>
+                                    <label for="tbNewMilage">Mileage</label>
                                     <asp:TextBox runat="server" ID="tbNewMilage" CssClass="form-control" placeholder="Milage"></asp:TextBox>
 
                                 </td>

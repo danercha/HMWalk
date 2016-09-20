@@ -31,7 +31,7 @@ namespace HWalk
                                       where m.WALKER_ID == w.WALKER_ID
                                       select m.MILEAGE1).ToList();
 
-                        _walk.Milage = (milage.Count > 0) ? double.Parse(milage.Sum().ToString()) : 0;
+                        _walk.Mileage = (milage.Count > 0) ? double.Parse(milage.Sum().ToString()) : 0;
 
                         _localWalkers.Add(_walk);
 

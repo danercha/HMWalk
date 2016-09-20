@@ -51,7 +51,7 @@
         }
     </style>
     <div class="jumbotron">
-        <h1>Hitchiner Walks</h1>
+        <h2><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Team IT Systems</span></h2>
 
         <table class="table table-hover" id="tblWalkers">
             <thead>

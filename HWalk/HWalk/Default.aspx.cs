@@ -15,7 +15,10 @@ namespace HWalk
         List<LocalMilage> _localMiles = new List<LocalMilage>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) {
+            if (!IsPostBack)
+            {
+                btnSave.Enabled = true;
+
                 using (WalkEntities wtx = new WalkEntities())
                 {
                     var _walkers = (from w in wtx.WALKERs
@@ -60,6 +63,7 @@ namespace HWalk
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            btnSave.Enabled = false;
             var name = hdnCurrentId.Value.ToString();
             int _id = int.Parse(name.TrimStart('W').ToString());
 
@@ -69,13 +73,24 @@ namespace HWalk
                 double mi = double.Parse(tbNewMilage.Text);
 
                 ptx.MILEAGEs.Add(new MILEAGE { WALKER_ID = _id, MILEAGE1 = mi, MILEAGE_DT = dt });
-                ptx.SaveChanges();
+                try
+                {
+                    ptx.SaveChanges();
+                }
+                catch(Exception p)
+                {
+                    btnSave.Enabled = true;
+                    
+                }
 
                 tbDate.Text = "";
                 tbNewMilage.Text = "";
-                Response.Redirect("Default.aspx");            }
+                Response.Redirect("Default.aspx");
+            }
+
+            
         }
 
-  
+
     }
 }

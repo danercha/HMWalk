@@ -8,7 +8,6 @@
             $('.datepicker').datepicker({
                 pickTime: false,
                 format: 'mm/dd/yyyy',
-                startDate: '-3d',
                 todayHighlight: true,
                 autoclose: true
             });

@@ -28,7 +28,7 @@ namespace HWalk
                     {
                         LocalWalker _walk = new LocalWalker();
                         _walk.Name = w.WALKER_FNAME.Trim() + " " + w.WALKER_LNAME.Trim();
-                        _walk.Walker_Id = w.WALKER_ID;
+                        _walk.Walker_Id = w.WALKER_ID ;
 
                         var milage = (from m in wtx.MILEAGEs
                                       where m.WALKER_ID == w.WALKER_ID
@@ -65,7 +65,7 @@ namespace HWalk
         {
             btnSave.Enabled = false;
             var name = hdnCurrentId.Value.ToString();
-            int _id = int.Parse(name.TrimStart('W').ToString());
+            int _id = int.Parse(name.TrimStart('W').TrimEnd('A').ToString());
 
             using (WalkEntities ptx = new WalkEntities())
             {
